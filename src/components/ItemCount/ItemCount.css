@@ -1,0 +1,10 @@
+.itemCountContainer{
+    border: grey 1px solid;
+    border-radius: 10px;
+}
+
+.quantityLabel{
+    text-align: center;
+    align-self: center;
+}
+
