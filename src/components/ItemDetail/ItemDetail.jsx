@@ -1,5 +1,5 @@
 
-const Item = ({producto}) => {
+const ItemDetail = ({producto}) => {
 
     return (     
         <div className="col-4 m-3 border w-25" data-id={producto.id}>  
@@ -13,4 +13,4 @@ const Item = ({producto}) => {
     )
 }
 
-export default Item
+export default ItemDetail

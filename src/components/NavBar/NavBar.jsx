@@ -3,26 +3,25 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 
+import { Link } from 'react-router-dom';
 
-const NavBar = ({children}) =>{
+const NavBar = () =>{
 
     return(
         <>
             <div className="navBar">
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Container>
-                        <Navbar.Brand href="#home">Tienda El Pepe</Navbar.Brand>
+                        <Link to="/">
+                            <Navbar.Brand>Tienda El Pepe</Navbar.Brand>
+                        </Link>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Link href="#features">Nosotros</Nav.Link>
-                                <Nav.Link href="#pricing">Productos</Nav.Link>
-                                <NavDropdown title="Tienda" id="collasible-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Productos</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">Promociones</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4">Contacto</NavDropdown.Item>
-                                </NavDropdown>
+                                <Link to="/products">
+                                    <Nav.Link href="/products">Productos</Nav.Link>                            
+                                </Link>
                             </Nav>
                             <Nav>
                                 <Nav.Link href="#deets">Sobre Nosotros</Nav.Link>
@@ -31,7 +30,6 @@ const NavBar = ({children}) =>{
                     </Container>
                 </Navbar>
             </div>
-            {children}
         </>
     );
 

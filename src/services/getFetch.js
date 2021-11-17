@@ -8,6 +8,8 @@ class Products{
     }
 }
 
+const producto = { nombre: "pepe", precio: 10, stock: 5, id:69};
+
 // Declaro el array de productos
 const arrayProducts = [];
 
@@ -42,7 +44,7 @@ for(let element in arrayProducts){
     arrayProducts[element].id = element;
 }
 
-const getFetch = new Promise((resolve, reject) => {
+export const getFetch = new Promise((resolve, reject) => {
 
     const condition = true;
     if(condition){
@@ -57,4 +59,12 @@ const getFetch = new Promise((resolve, reject) => {
     }
 })
 
-export default getFetch
+
+export const getFetchProduct = new Promise((resolve, reject)=>{
+
+    setTimeout(()=>{
+        resolve(producto)
+    }, 2000)
+
+})
+
