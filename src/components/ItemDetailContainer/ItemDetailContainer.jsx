@@ -19,8 +19,7 @@ const ItemDetailContainer = () =>{
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
         
-        let index = products.findIndex(element => element.id === productID);
-        console.log(index)
+
 
     })
 
@@ -32,7 +31,7 @@ const ItemDetailContainer = () =>{
                             <span className="visually-hidden">Loading...</span>
                     :
             <div className="card-columns">
-                <ItemDetail producto={products[0]}/>
+                <ItemDetail producto={products} id={productID}/>
             </div>  
             }
         </>
