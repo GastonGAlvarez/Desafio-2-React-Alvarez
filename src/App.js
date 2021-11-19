@@ -8,6 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/ItemCount/ItemCount.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+// Cart de prueba
+const Cart = () =>{
+  return (<p>Este es su carrito de compras</p>)
+}
 
 
 function App() {
@@ -20,6 +24,7 @@ function App() {
                   <Routes>
                       <Route exact path='/products' element={<ItemListContainer/>} />                 
                       <Route exact path='/detail/:productID' element={ <ItemDetailContainer/>} />
+                      <Route exact path='/cart' element={<Cart/>}/>
                   </Routes>     
             </div>
         </BrowserRouter>

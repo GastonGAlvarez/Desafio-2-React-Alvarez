@@ -19,9 +19,9 @@ const ItemDetailContainer = () =>{
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
         
+    },[])
 
 
-    })
 
     return(
         <>
@@ -30,7 +30,7 @@ const ItemDetailContainer = () =>{
             { loading ? 
                             <span className="visually-hidden">Loading...</span>
                     :
-            <div className="card-columns">
+            <div className="card-columns d-flex justify-content-center">
                 <ItemDetail producto={products} id={productID}/>
             </div>  
             }
