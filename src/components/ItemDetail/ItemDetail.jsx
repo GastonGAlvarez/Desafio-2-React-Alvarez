@@ -1,16 +1,22 @@
 import ItemCount from "../ItemCount/ItemCount";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../CartContext/CartContext";
 
 const ItemDetail = ({producto, id}) => {
 
     const [ wasClick, setWasClick] = useState(false);
 
+    const { addCarrito, cartList } = useContext(CartContext);
+
     const addOn = (quantity) =>{
         console.log("Usted compró " + quantity + " productos.");
+        addCarrito({...producto[index], quantity});
         setWasClick(true);
     };
     
+    console.log(cartList);
+
     let index = producto.findIndex(element => element.id === id);
 
     return (     
