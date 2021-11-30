@@ -35,10 +35,7 @@ const CartContextProvider = ({children}) =>{
     }
 
     function removeItemCart(id){
-        let index = cartList.findIndex(element => element.id === id);
-        if(index !== -1){
-            cartList.splice(index, 1);
-        }
+        setCartList(cartList.filter(element => element.id !== id));
     }
 
     return(
