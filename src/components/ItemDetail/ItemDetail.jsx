@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../CartContext/CartContext";
 
-const ItemDetail = ({producto, id}) => {
+const ItemDetail = ({ id }) => {
 
     const [ wasClick, setWasClick] = useState(false);
 
@@ -11,21 +11,21 @@ const ItemDetail = ({producto, id}) => {
 
     const addOn = (quantity) =>{
         console.log("Usted compró " + quantity + " productos.");
-        addCarrito({...producto[index], quantity});
+        addCarrito({...products[index], quantity});
         setWasClick(true);
     };
     
     console.log(cartList);
 
-    let index = producto.findIndex(element => element.id === id);
+    let index = products.findIndex(element => element.id === id);
 
     return (     
-        <div className="col-4 m-3 border w-25 " data-id={producto[index].id}>  
-            <div className='card-header'>{producto[index].nombre}</div>
-            <div className='card-header'>{producto[index].precio}</div>
-            <div className='card-header'>{producto[index].stock}</div>
+        <div className="col-4 m-3 border w-25 " data-id={products[index].id}>  
+            <div className='card-header'>{products[index].name}</div>
+            <div className='card-header'>{products[index].price}</div>
+            <div className='card-header'>{products[index].stock}</div>
             <div className="card-body">
-                <img src={`./resources/${producto[index].nombre}.jpg`} alt='Imagen del Producto' className='w-25' />
+                <img src={`${products[index].urlImage}`} alt='Imagen del Producto' className='w-25' />
             </div>
 
             { 

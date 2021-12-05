@@ -5,9 +5,10 @@ const CartItem = ({product}) =>{
     const { removeItemCart } = useCarritoContext();
 
     return(
-        <div className="d-flex flex-column m-3 justify-items-center">
-            <p>{product.nombre}</p>
-            <p>{product.precio}</p>
+        <div className="d-flex flex-column m-3 align-items-center">
+            <p>{product.name}</p>
+            <img src={`${product.urlImage}`} className="w-25" />
+            <p>{product.price}</p>
             <p>{product.quantity}</p>
             <button type="button" onClick={ () => removeItemCart(product.id)}>X</button>
         </div>

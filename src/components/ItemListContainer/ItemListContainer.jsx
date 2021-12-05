@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { Spinner } from "react-bootstrap";
 import { getFirestore } from "../../services/getFirestore";
+import { useCarritoContext } from "../../CartContext/CartContext";
 
 const ItemListContainer = ({greeting}) =>{
 
-    const [products, setProducts] = useState([]);
     const [loading , setLoading] = useState(true);
 
+    const { products, setProducts} = useCarritoContext();
 
     useEffect(() =>{  
 

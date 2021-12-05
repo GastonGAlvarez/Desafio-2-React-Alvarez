@@ -12,6 +12,7 @@ export const useCarritoContext = () => useContext(CartContext);
 const CartContextProvider = ({children}) =>{
     
     const [cartList, setCartList] = useState([]);
+    const [products, setProducts] = useState([]);
     const [quantity, setQuantity] = useState(0);
 
     function addCarrito(item){
@@ -49,7 +50,7 @@ const CartContextProvider = ({children}) =>{
     }, [cartList])
 
     return(
-        <CartContext.Provider value={{ useCarritoContext, addCarrito, cartList, setCartList, clearCarro, removeItemCart, quantity}}>
+        <CartContext.Provider value={{ useCarritoContext, addCarrito, cartList, setCartList, clearCarro, removeItemCart, quantity, products, setProducts}}>
             {children}
         </CartContext.Provider>
 
