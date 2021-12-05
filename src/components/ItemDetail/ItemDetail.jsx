@@ -7,7 +7,7 @@ const ItemDetail = ({producto, id}) => {
 
     const [ wasClick, setWasClick] = useState(false);
 
-    const { addCarrito, cartList } = useContext(CartContext);
+    const { addCarrito, cartList, products } = useContext(CartContext);
 
     const addOn = (quantity) =>{
         console.log("Usted compró " + quantity + " productos.");

@@ -2,6 +2,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
+import CartWidget from '../CartWidget/CartWidget';
 
 import { Link } from 'react-router-dom';
 
@@ -18,13 +19,13 @@ const NavBar = () =>{
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="#features">Nosotros</Nav.Link>
                                 <Link to="/products">
                                     <Nav.Link href="/products">Productos</Nav.Link>                            
                                 </Link>
+                                <Nav.Link href="#features">Nosotros</Nav.Link>
                             </Nav>
                             <Nav>
-                                <Nav.Link href="#deets">Sobre Nosotros</Nav.Link>
+                                <CartWidget/>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

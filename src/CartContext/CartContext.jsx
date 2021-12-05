@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 
 // Creo el context
@@ -12,6 +12,7 @@ export const useCarritoContext = () => useContext(CartContext);
 const CartContextProvider = ({children}) =>{
     
     const [cartList, setCartList] = useState([]);
+    const [quantity, setQuantity] = useState(0);
 
     function addCarrito(item){
         
@@ -36,10 +37,19 @@ const CartContextProvider = ({children}) =>{
 
     function removeItemCart(id){
         setCartList(cartList.filter(element => element.id !== id));
+        setQuantity(0);
     }
 
+    useEffect(() =>{
+        console.log("TEST")
+        for(let item of cartList){
+            setQuantity( quantity + item.quantity );
+            console.log(quantity)
+        }
+    }, [cartList])
+
     return(
-        <CartContext.Provider value={{ useCarritoContext, addCarrito, cartList, setCartList, clearCarro, removeItemCart}}>
+        <CartContext.Provider value={{ useCarritoContext, addCarrito, cartList, setCartList, clearCarro, removeItemCart, quantity}}>
             {children}
         </CartContext.Provider>
 

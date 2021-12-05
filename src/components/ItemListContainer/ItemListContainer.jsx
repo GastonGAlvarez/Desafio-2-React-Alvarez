@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { Spinner } from "react-bootstrap";
-import { getFetch } from "../../services/getFetch";
+import { getFirestore } from "../../services/getFirestore";
 
 const ItemListContainer = ({greeting}) =>{
 
@@ -10,12 +10,15 @@ const ItemListContainer = ({greeting}) =>{
 
 
     useEffect(() =>{  
-        getFetch
-        .then(res => {
-            setProducts(res) // array con los productos
-        })
-        .catch(err => console.log(err))
+
+        const dbQuery = getFirestore();    // Conexión con Firestore
+
+        // Promesa
+        dbQuery.collection('products').get()   // Traigo toda la colección "Products"
+        .then(resp => setProducts( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } ) )  ))
+        .catch( err => console.log(err))
         .finally(() => setLoading(false))
+
     })
 
     return(
@@ -29,11 +32,11 @@ const ItemListContainer = ({greeting}) =>{
                 <div className="card-columns row">
                     { products.map(prod=> <div key={prod.id} className="card w-25 m-5 col-4 border" >
                                             <div className="card-header">
-                                                {`${prod.nombre} - ${prod.precio}`}
+                                                {`${prod.name}`}
                                             </div>
                                             <div className="card-body">
-                                                <img src={prod.foto} alt='' />
-                                                {prod.precio}
+                                                <img src={prod.urlImage} alt='' className="w-100"/>
+                                                {`$ ${prod.price}`}
                                                 
                                             </div>
                                             <div className="card-footer">

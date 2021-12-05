@@ -12,12 +12,6 @@ const ItemDetailContainer = () =>{
 
     useEffect(() =>{
         
-        getFetch
-        .then(res => {
-            setProducts(res) // array con los productos
-        })
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
         
     },[])
 
@@ -31,7 +25,7 @@ const ItemDetailContainer = () =>{
                             <span className="visually-hidden">Loading...</span>
                     :
             <div className="card-columns d-flex justify-content-center">
-                <ItemDetail producto={products} id={productID}/>
+                <ItemDetail id={productID}/>
             </div>  
             }
         </>
