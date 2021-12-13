@@ -33,7 +33,7 @@ const ItemDetail = ({ id }) => {
                                     <p>Ir a la tienda</p>
                                 </Link> )
                         : (
-                <ItemCount initial={1} stock={5} addOn={addOn}/> )      
+                <ItemCount initial={1} stock={products[index].stock} addOn={addOn}/> )      
             }      
 
         </div>      
