@@ -19,6 +19,7 @@ const CartContextProvider = ({children}) =>{
         
         if(cartList.find(element => element.id === item.id) === undefined){
             setCartList([...cartList, item]);
+            setQuantity( quantity + item.quantity);
         }
         else{
             addQuantity(item);
@@ -29,25 +30,23 @@ const CartContextProvider = ({children}) =>{
         let index = cartList.findIndex(element => element.id === item.id)
         if(index !== -1){
             cartList[index].quantity += item.quantity;
+            setQuantity( quantity + item.quantity);
         }
     }
 
     function clearCarro(){
         setCartList([]);
-    }
-
-    function removeItemCart(id){
-        setCartList(cartList.filter(element => element.id !== id));
         setQuantity(0);
     }
 
-    useEffect(() =>{
-        console.log("TEST")
-        for(let item of cartList){
-            setQuantity( quantity + item.quantity );
-            console.log(quantity)
-        }
-    }, [cartList])
+    function removeItemCart(id){
+        let itemQuantity= 0;
+        let itemIndex = cartList.findIndex( element => element.id === id);
+        setQuantity( quantity - cartList[itemIndex].quantity );
+
+        setCartList(cartList.filter(element => element.id !== id));
+    }
+
 
     return(
         <CartContext.Provider value={{ useCarritoContext, addCarrito, cartList, setCartList, clearCarro, removeItemCart, quantity, products, setProducts}}>
