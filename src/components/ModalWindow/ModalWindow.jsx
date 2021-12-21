@@ -40,24 +40,27 @@ const [idOrder, setIdOrder] = useState(null);
             </Modal.Header>
             <Modal.Body>
                 <fieldset>
-                    <form onSubmit={createOrder} >
+                    <form onSubmit={createOrder}  className="d-flex flex-column align-items-center">
                         <label>Nombre:</label>
                         <input
                             value={name}
                             type="text"
                             onChange={(e) => setName(e.target.value)}
+                            className="mb-3"
                         />
                         <label>Email:</label>
                         <input
                             value={email}
-                            type="text"
+                            type="email"
                              onChange={(e) => setEmail(e.target.value)}
+                             className="mb-3"
                         />
                         <label>Telefono:</label>
                         <input
                             value={phone}
-                            type="text"
+                            type="tel"
                             onChange={(e) => setPhone(e.target.value)}
+                            className="mb-3"
                         />
                         <button variant="outline-info" type="submit" className="mt-auto" >
                             Comprar
@@ -65,12 +68,7 @@ const [idOrder, setIdOrder] = useState(null);
                     </form>
                 </fieldset>
             </Modal.Body>
-            <Modal.Footer>
-                <button variant="outline-info" type="submit" className="mt-auto" >
-                    Cerrar
-              </button>
-            </Modal.Footer>
-            <small>{idOrder ? ` Su orden fue generada con el ID: ${idOrder}` : null}</small>
+            <small className="m-auto my-2">{idOrder ? ` Su orden fue generada con el ID: ${idOrder}` : null}</small>
         </Modal>
     );
 }
