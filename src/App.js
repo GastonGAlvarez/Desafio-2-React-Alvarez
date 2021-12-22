@@ -18,6 +18,7 @@ function App() {
               <div className="App">
                   <NavBar />
                     <Routes>
+                      <Route exact path='/' element={<ItemListContainer/>} />
                         <Route exact path='/products' element={<ItemListContainer/>} />                 
                         <Route exact path='/detail/:productID' element={ <ItemDetailContainer/>} />
                         <Route exact path='/cart' element={<Cart/>}/>

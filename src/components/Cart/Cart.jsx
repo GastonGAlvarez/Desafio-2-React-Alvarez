@@ -1,5 +1,4 @@
 import { useCarritoContext } from "../../CartContext/CartContext";
-import { memo } from "react";
 import CartItem from "../CartItem/CartItem";
 import ModalWindow from "../ModalWindow/ModalWindow";
 import { Button } from "react-bootstrap";

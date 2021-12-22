@@ -1,11 +1,11 @@
-import {useState, useContext} from 'react';
+import {useState } from 'react'; 
 import Modal from "react-bootstrap/Modal";
 import { getFirestore } from "../../services/getFirestore";
 import { useCarritoContext } from '../../CartContext/CartContext';
 
 const ModalWindow = (props) => {
     
-const { cartList, removeItemCart } = useCarritoContext();
+const { cartList } = useCarritoContext();
     
 const [name, setName] = useState("");
 const [phone, setPhone] = useState("");

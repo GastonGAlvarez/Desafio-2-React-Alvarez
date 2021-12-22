@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 
 
 // Creo el context
@@ -40,7 +40,6 @@ const CartContextProvider = ({children}) =>{
     }
 
     function removeItemCart(id){
-        let itemQuantity= 0;
         let itemIndex = cartList.findIndex( element => element.id === id);
         setQuantity( quantity - cartList[itemIndex].quantity );
 

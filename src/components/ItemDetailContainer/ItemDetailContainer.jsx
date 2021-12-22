@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link , Routes, Router} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { Spinner } from "react-bootstrap";
 

@@ -1,6 +1,5 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import CartWidget from '../CartWidget/CartWidget';
 
@@ -20,7 +19,7 @@ const NavBar = () =>{
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
                                 <Link to="/products">
-                                    <Nav.Link href="/products">Productos</Nav.Link>                            
+                                    <p>Productos</p>                            
                                 </Link>
                                 <Nav.Link href="#features">Nosotros</Nav.Link>
                             </Nav>
