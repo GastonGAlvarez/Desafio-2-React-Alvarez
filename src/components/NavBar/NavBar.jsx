@@ -12,14 +12,14 @@ const NavBar = () =>{
             <div className="navBar">
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Container>
-                        <Link to="/">
+                        <Link to="/" className="text-decoration-none">
                             <Navbar.Brand>Tienda El Pepe</Navbar.Brand>
                         </Link>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Link to="/products">
-                                    <p>Productos</p>                            
+                                <Link to="/products" className="nav-link">
+                                    Productos                            
                                 </Link>
                                 <Nav.Link href="#features">Nosotros</Nav.Link>
                             </Nav>
