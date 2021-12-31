@@ -14,11 +14,11 @@ Las dependencias utilizadas en este proyecto.
 
 | Nombre | Uso |
 |--------|-----|
-| [ReactJS](https://reactjs.org/) | Librería Principal |
-| [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start) | Navegación |
-| [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) | Estilos |
-| [React-Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)| Componentes estilizados |
-| [Firebase](https://firebase.google.com/) | Base de Datos |
+| [ReactJS] v17.0.2(https://reactjs.org/) | Librería Principal |
+| [React Router DOM] v6.0.2(https://v5.reactrouter.com/web/guides/quick-start) | Navegación |
+| [Bootstrap] v5.1.3(https://getbootstrap.com/docs/5.0/getting-started/introduction/) | Estilos |
+| [React-Bootstrap] v2.0.0(https://react-bootstrap.github.io/getting-started/introduction/)| Componentes estilizados |
+| [Firebase] v8.9.1(https://firebase.google.com/) | Base de Datos |
 
 # Instalación
 
@@ -27,8 +27,11 @@ Instrucciones de instalación y configuración
 Clonar el repositorio. Necesitará `node` y `npm` instalados globalmente en su máquina.
 
 git clone https://github.com/GastonGAlvarez/Desafio-2-React-Alvarez.git
+
 `cd Desafio-2-React-Alvarez`
+
 `npm install`
+
 `npm start`
 
 Ir a `localhost:3000/`
