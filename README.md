@@ -14,11 +14,11 @@ Las dependencias utilizadas en este proyecto.
 
 | Nombre | Uso |
 |--------|-----|
-| [ReactJS] v17.0.2(https://reactjs.org/) | Librería Principal |
-| [React Router DOM] v6.0.2(https://v5.reactrouter.com/web/guides/quick-start) | Navegación |
-| [Bootstrap] v5.1.3(https://getbootstrap.com/docs/5.0/getting-started/introduction/) | Estilos |
-| [React-Bootstrap] v2.0.0(https://react-bootstrap.github.io/getting-started/introduction/)| Componentes estilizados |
-| [Firebase] v8.9.1(https://firebase.google.com/) | Base de Datos |
+| [ReactJS](https://reactjs.org/) v17.0.2 | Librería Principal |
+| [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start) v6.0.2 | Navegación |
+| [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) v5.1.3 | Estilos |
+| [React-Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/) v2.0.0| Componentes estilizados |
+| [Firebase](https://firebase.google.com/) v8.9.1 | Base de Datos |
 
 # Instalación
 
