@@ -1,10 +1,10 @@
 import Item from "../Item/Item"
 
-const ItemList = ({productos}) => {
+const ItemList = ({products}) => {
 
     return (
         <div className="row justify-content-center">
-            {productos.map(producto => <Item producto={producto}/>)}
+            {products.map(product => <Item product={product} key={product.id}/>)}
         </div>
     )
 }
