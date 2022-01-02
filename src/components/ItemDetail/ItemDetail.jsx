@@ -10,12 +10,10 @@ const ItemDetail = ({ id }) => {
     const { addCarrito, cartList, products } = useContext(CartContext);
 
     const addOn = (quantity) =>{
-        console.log("Usted compró " + quantity + " productos.");
         addCarrito({...products[index], quantity});
         setWasClick(true);
     };
     
-    console.log(cartList);
 
     let index = products.findIndex(element => element.id === id);
 
