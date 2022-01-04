@@ -18,10 +18,12 @@ const NavBar = () =>{
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Link to="/products" className="nav-link">
-                                    Productos                            
+                                <Link to="/category/Notebooks" className="nav-link">
+                                    Notebooks                            
                                 </Link>
-                                <Nav.Link href="#features">Nosotros</Nav.Link>
+                                <Link to="/category/Tablets" className="nav-link">
+                                    Tablets
+                                </Link>
                             </Nav>
                             <Nav>
                                 <CartWidget/>

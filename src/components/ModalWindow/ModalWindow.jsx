@@ -9,11 +9,17 @@ const { cartList } = useCarritoContext();
     
 const [name, setName] = useState("");
 const [phone, setPhone] = useState("");
-const [email, setEmail] = useState("");    
+const [email, setEmail] = useState("");
+const [emailValidation, setEmailValidation] = useState(""); 
 const [idOrder, setIdOrder] = useState(null); 
    
     const createOrder = (e) => {
-            e.preventDefault()
+    
+        e.preventDefault()
+
+        if(email !== emailValidation)
+            alert("Los email no coinciden!");
+        else{
             const buyer = { name, phone, email};
             const db = getFirestore();
             const ordersCollection = db.collection("orders");
@@ -30,6 +36,7 @@ const [idOrder, setIdOrder] = useState(null);
             .then((IdDocument) => {
                 setIdOrder(IdDocument.id)
             })
+        }
     }
 
     return (
@@ -53,6 +60,12 @@ const [idOrder, setIdOrder] = useState(null);
                             value={email}
                             type="email"
                              onChange={(e) => setEmail(e.target.value)}
+                             className="mb-3"
+                        />
+                        <label>Repite tu Email:</label>
+                        <input
+                            type="email"
+                             onChange={(e) => setEmailValidation(e.target.value)}
                              className="mb-3"
                         />
                         <label>Telefono:</label>

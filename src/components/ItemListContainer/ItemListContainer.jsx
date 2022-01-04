@@ -3,6 +3,7 @@ import { Spinner } from "react-bootstrap";
 import { getFirestore } from "../../services/getFirestore";
 import { useCarritoContext } from "../../CartContext/CartContext";
 import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({greeting}) =>{
 
@@ -10,17 +11,31 @@ const ItemListContainer = ({greeting}) =>{
 
     const { products, setProducts} = useCarritoContext();
 
+    const { categoryID } = useParams()
+
+
     useEffect(() =>{  
 
+        setLoading(true);
+        
         const dbQuery = getFirestore();    // Conexión con Firestore
 
         // Promesa
-        dbQuery.collection('products').get()   // Traigo toda la colección "Products"
-        .then(resp => setProducts( resp.docs.map( prod => ( { id: prod.id, ...prod.data() } ) )  ))
-        .catch( err => console.log(err))
-        .finally(() => setLoading(false))
 
-    })
+        if (categoryID) {
+            dbQuery.collection('products').where('category', '==', categoryID).get() // // Traigo toda la categoría
+            .then(data => setProducts(   data.docs.map(pro => ( { id: pro.id, ...pro.data() } ))   ))
+            .catch(err=> console.log(err))
+            .finally(()=> setLoading(false))    
+
+        } else {                
+            dbQuery.collection('products').get() // Traigo toda la colección "Products"
+            .then(data => setProducts(   data.docs.map(pro => ( { id: pro.id, ...pro.data() } ))   ))
+            .catch(err=> console.log(err))
+            .finally(()=> setLoading(false))
+        }
+
+    }, [categoryID])
 
     return(
         <>

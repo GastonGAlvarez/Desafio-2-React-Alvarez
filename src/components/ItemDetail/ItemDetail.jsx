@@ -20,8 +20,8 @@ const ItemDetail = ({ id }) => {
     return (     
         <div className="col-4 m-3 border w-25 " data-id={products[index].id}>  
             <div className='card-header'>{products[index].name}</div>
-            <div className='card-header'>{products[index].price}</div>
-            <div className='card-header'>{products[index].stock}</div>
+            <div className='card-header'>{`$ ${products[index].price} `}</div>
+            <div className='card-header'>{`Stock: ${products[index].stock} `}</div>
             <div className="card-body">
                 <img src={`${products[index].urlImage}`} alt='Imagen del Producto' className='w-25' />
             </div>
