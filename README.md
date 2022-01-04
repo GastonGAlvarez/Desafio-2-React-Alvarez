@@ -38,4 +38,5 @@ Ir a `localhost:3000/`
 
 # Screenshot del proyecto
 
-gif
+![Gif E-commerce](https://user-images.githubusercontent.com/88116420/148002100-b79e98c7-4857-4092-a4fe-0d6fceeb32ae.gif)
+
