@@ -35,7 +35,7 @@ const ItemListContainer = ({greeting}) =>{
             .finally(()=> setLoading(false))
         }
 
-    }, [categoryID])
+    }, [categoryID, setProducts])
 
     return(
         <>

@@ -23,7 +23,7 @@ const Cart = () =>{
         :
         (<>
             <p>¡El carro esta vacío!</p>
-            <Link to="/products">
+            <Link to="/">
              <Button>Volver a productos</Button>
             </Link>
 
